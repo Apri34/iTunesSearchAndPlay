@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val BASE_URL = "https://itunes.apple.com/"
-
-        private const val KEY_LIST_SONGS = "songs"
     }
 
     private lateinit var retrofit: Retrofit
@@ -44,11 +42,6 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL))
-        }
-
-        if(savedInstanceState != null) {
-            songs = savedInstanceState.getParcelableArrayList<Song>(KEY_LIST_SONGS) as ArrayList<Song>
-            recyclerView.adapter = SongAdapter(songs)
         }
 
         retrofit = Retrofit.Builder()
@@ -79,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                         if(songs.size == 0)
                             Toast.makeText(this@MainActivity, R.string.no_songs_found, Toast.LENGTH_LONG).show()
 
+                        (recyclerView.adapter as SongAdapter?)?.resetMediaPlayer()
                         recyclerView.adapter = SongAdapter(songs)
                     }
                 })
@@ -94,12 +88,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        (recyclerView.adapter as SongAdapter).releaseMediaPlayer()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-
-        outState.putParcelableArrayList(KEY_LIST_SONGS, songs)
+        (recyclerView.adapter as SongAdapter?)?.resetMediaPlayer()
     }
 }

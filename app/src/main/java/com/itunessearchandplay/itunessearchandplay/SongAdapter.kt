@@ -113,11 +113,12 @@ class SongAdapter(private val mDataset: List<Song>): RecyclerView.Adapter<SongAd
         notifyDataSetChanged()
     }
 
-    fun releaseMediaPlayer() {
+    fun resetMediaPlayer() {
         if(mediaPlayer.isPlaying) {
             mediaPlayer.stop()
         }
         mediaPlayer.reset()
-        mediaPlayer.release()
+        currentPlaying = -1
+        notifyDataSetChanged()
     }
 }
