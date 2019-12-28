@@ -8,8 +8,8 @@ I developed this application due to a job application. I decided to utilize this
 This project uses the Gradle build system. To build this project, use the gradlew build command or use "Import Project" in Android Studio.
 
 ## Screenshots
-![](images/Screenshot1.jpg)
-![](images/Screenshot2.jpg)
+![](images/Screenshot1.png)
+![](images/Screenshot2.png)
 
 ## Libraries used
 * [Android KTX](https://developer.android.com/kotlin)
