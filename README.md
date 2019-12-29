@@ -1,5 +1,5 @@
 # iTunesSearchAndPlay
-With this App you can search tracks from iTunes and reproduce the preview.
+With this App you can search tracks from iTunes and reproduce the preview. In the toolbar, you can search for an artist or title. You can see details of a song by clicking on it and add it to you favourites by long-clicking it.
 
 ## Motivation
 I developed this application due to a job application. I decided to utilize this opportunity to extend my portfolio.
@@ -10,6 +10,7 @@ This project uses the Gradle build system. To build this project, use the gradle
 ## Screenshots
 ![](images/Screenshot1.png)
 ![](images/Screenshot2.png)
+![](images/Screenshot3.png)
 
 ## Libraries used
 * [Android KTX](https://developer.android.com/kotlin)
