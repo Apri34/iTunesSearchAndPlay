@@ -19,6 +19,7 @@ This project uses the Gradle build system. To build this project, use the gradle
 * [ConstraintLayout](https://developer.android.com/reference/android/support/constraint/ConstraintLayout)
 * [Retrofit](https://square.github.io/retrofit/) for easy API calls
 * [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) for easy conversion from JSON to Java Model class
+* [Perference](https://developer.android.com/reference/android/preference/Preference) to save favorite Songs
 
 ## What I learned
 * Using RESTful APIs
