@@ -1,10 +1,14 @@
-package com.itunessearchandplay.itunessearchandplay;
+package com.itunessearchandplay.itunessearchandplay.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+/**
+ * Author: Andreas Pribitzer
+ */
 
 public class Song implements Parcelable {
 
@@ -93,7 +97,7 @@ public class Song implements Parcelable {
     @Expose
     private String primaryGenreName;
 
-    protected Song(Parcel in) {
+    private Song(Parcel in) {
         wrapperType = in.readString();
         kind = in.readString();
         if (in.readByte() == 0) {
@@ -487,4 +491,39 @@ public class Song implements Parcelable {
         this.primaryGenreName = primaryGenreName;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        boolean isEqual = false;
+        if(object instanceof Song) {
+            isEqual = (wrapperType.equals(((Song) object).wrapperType) &&
+                    kind.equals(((Song) object).kind) &&
+                    artistId.equals(((Song) object).artistId)) &&
+                    collectionId.equals(((Song) object).collectionId) &&
+                    trackId.equals(((Song) object).trackId) &&
+                    artistName.equals(((Song) object).artistName) &&
+                    collectionName.equals(((Song) object).collectionName) &&
+                    trackName.equals(((Song) object).trackName) &&
+                    collectionCensoredName.equals(((Song) object).collectionCensoredName) &&
+                    trackCensoredName.equals(((Song) object).trackCensoredName) &&
+                    artistViewUrl.equals(((Song) object).artistViewUrl) &&
+                    collectionViewUrl.equals(((Song) object).collectionViewUrl) &&
+                    trackViewUrl.equals(((Song) object).trackViewUrl) &&
+                    previewUrl.equals(((Song) object).previewUrl) &&
+                    artworkUrl60.equals(((Song) object).artworkUrl60) &&
+                    artworkUrl100.equals(((Song) object).artworkUrl100) &&
+                    collectionPrice.equals(((Song) object).collectionPrice) &&
+                    trackPrice.equals(((Song) object).trackPrice) &&
+                    collectionExplicitness.equals(((Song) object).collectionExplicitness) &&
+                    trackExplicitness.equals(((Song) object).trackExplicitness) &&
+                    discCount.equals(((Song) object).discCount) &&
+                    discNumber.equals(((Song) object).discNumber) &&
+                    trackCount.equals(((Song) object).trackCount) &&
+                    trackNumber.equals(((Song) object).trackNumber) &&
+                    trackTimeMillis.equals(((Song) object).trackTimeMillis) &&
+                    country.equals(((Song) object).country) &&
+                    currency.equals(((Song) object).currency) &&
+                    primaryGenreName.equals(((Song) object).primaryGenreName);
+        }
+        return isEqual;
+    }
 }

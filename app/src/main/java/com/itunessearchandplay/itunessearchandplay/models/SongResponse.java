@@ -1,8 +1,12 @@
-package com.itunessearchandplay.itunessearchandplay;
+package com.itunessearchandplay.itunessearchandplay.models;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+
+/**
+ * Author: Andreas Pribitzer
+ */
 
 public class SongResponse {
     @SerializedName("results")

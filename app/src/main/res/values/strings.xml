@@ -4,4 +4,10 @@
     <string name="search_hint">Enter artist or title</string>
     <string name="toast_failure">Something went wrong. Check your connection.</string>
     <string name="no_songs_found">No songs found…</string>
+    <string name="no_favorites_added">No favorites added</string>
+    <string name="favorites">Favorites</string>
+    <string name="back">Back</string>
+    <string name="add_to_favorites">Add this Song to your favorites?</string>
+    <string name="remove_from_favorites">Remove this Song from your favorites?</string>
+    <string name="something_went_wrong">Something went wrong. Try again.</string>
 </resources>
